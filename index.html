@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Academic Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (Optional: replace with your own) -->
+    <link rel="icon" href="https://placehold.co/32x32/a0aec0/ffffff?text=YR" type="image/png">
+
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Your Name -->
+            <h1 class="text-2xl font-bold text-gray-900">
+                <a href="#">Your Name</a>
+            </h1>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                <a href="#research" class="text-gray-600 hover:text-blue-600 transition-colors">Research</a>
+                <a href="#publications" class="text-gray-600 hover:text-blue-600 transition-colors">Publications</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="mb-16 scroll-mt-24">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1">
+                    <!-- Profile Picture -->
+                    <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=Your+Photo" 
+                         alt="A professional headshot of Your Name" 
+                         class="rounded-lg shadow-md w-full max-w-xs mx-auto md:mx-0">
+                </div>
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+                    <!-- Replace this with your biography -->
+                    <p class="mb-4 text-gray-700 leading-relaxed">
+                        Welcome to my personal website. I am a [Your Position, e.g., PhD Candidate, Postdoctoral Researcher] at the [Your University/Institution], specializing in [Your Field]. My research focuses on [briefly describe your research interests, e.g., machine learning applications in computational biology].
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        I am passionate about [mention a broader passion related to your field] and believe in the power of interdisciplinary collaboration to solve complex problems. This website serves as a central hub for my academic work, including my research projects and publications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">Research Interests</h2>
+            <div class="space-y-6">
+                <!-- Research Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-xl mb-2 text-blue-700">Project Title One</h3>
+                    <p class="text-gray-700">
+                        A brief but detailed description of your research project. Explain the core problem, the methods you are using, and the expected outcomes or current status. You can also include a link to a project page or a relevant paper.
+                    </p>
+                </div>
+                <!-- Research Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-xl mb-2 text-blue-700">Project Title Two</h3>
+                    <p class="text-gray-700">
+                        Describe another one of your key research areas or projects. This is a great place to showcase the breadth of your work and your expertise in different sub-fields.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">Selected Publications</h2>
+            <div class="space-y-4">
+                <!-- Publication Item 1 -->
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <p class="text-gray-700">
+                        <strong>Your Name</strong>, Co-author Name, & Another Co-author. (Year). "Title of the Publication." <em>Journal or Conference Name</em>, Volume(Issue), pages. 
+                        <a href="#" class="text-blue-600 hover:underline ml-2">[PDF]</a>
+                        <a href="#" class="text-blue-600 hover:underline ml-2">[Code]</a>
+                    </p>
+                </div>
+                <!-- Publication Item 2 -->
+                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                    <p class="text-gray-700">
+                        Co-author Name, <strong>Your Name</strong>, & Another Co-author. (Year). "Title of Another Publication." <em>Journal or Conference Name</em>, Volume(Issue), pages.
+                        <a href="#" class="text-blue-600 hover:underline ml-2">[PDF]</a>
+                        <a href="#" class="text-blue-600 hover:underline ml-2">[DOI]</a>
+                    </p>
+                </div>
+                 <!-- Add more publications as needed -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="text-center scroll-mt-24">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                I am always open to discussing new research ideas, collaborations, or opportunities. Feel free to reach out via email or connect with me on social media.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <!-- Replace '#' with your actual links -->
+                <a href="mailto:your.email@example.com" class="text-gray-600 hover:text-blue-600 transition-colors">Email</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">GitHub</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Google Scholar</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">LinkedIn</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Twitter / X</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-12">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
