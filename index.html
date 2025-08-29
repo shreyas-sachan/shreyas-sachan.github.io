@@ -13,128 +13,124 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Favicon (Optional: replace with your own) -->
-    <link rel="icon" href="https://placehold.co/32x32/a0aec0/ffffff?text=SS" type="image/png">
-
-    <style>
-        /* Use the Inter font family */
-        body {
-            font-family: 'Inter', sans-serif;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
         }
-    </style>
+    </script>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-white text-gray-800 antialiased">
 
     <!-- Header & Navigation -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Your Name -->
-            <h1 class="text-2xl font-bold text-gray-900">
-                <a href="#">Shreyas Sachan</a>
-            </h1>
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-                <a href="#research" class="text-gray-600 hover:text-blue-600 transition-colors">Research</a>
-                <a href="#publications" class="text-gray-600 hover:text-blue-600 transition-colors">Publications</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
-            </nav>
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Your Name -->
+                <a href="#" class="text-lg font-bold text-gray-900">Shreyas Sachan</a>
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+                    <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                    <a href="#research" class="hover:text-blue-600 transition-colors">Research</a>
+                    <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#publications" class="hover:text-blue-600 transition-colors">Publications</a>
+                </nav>
+            </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <main class="max-w-4xl mx-auto px-6 py-12">
 
-        <!-- About Me Section -->
-        <section id="about" class="mb-16 scroll-mt-24">
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-1">
-                    <!-- Profile Picture -->
-                    <!-- Profile Picture -->
-                    <img src="https://raw.githubusercontent.com/shreyas-sachan/shreyas-sachan.github.io/main/ShreyasSachan.png" 
-                        alt="A professional headshot of Shreyas Sachan" 
-                        class="rounded-lg shadow-md w-full max-w-xs mx-auto md:mx-0">
-                </div>
-                <div class="md:col-span-2">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
-                    <!-- Replace this with your biography -->
-                    <p class="mb-4 text-gray-700 leading-relaxed">
-                        I am a Master of Science student in Visual Computing at Universität des Saarlandes, conducting my thesis research at the Max Planck Institute for Informatics. My work is advised by Prof. Christian Theobalt and Dr. Vladislav Golyanik.
-                    </p>
+        <!-- About Me Section / Hero -->
+        <section id="about" class="mb-20 scroll-mt-24">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+                <div class="md:w-2/3">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-2">Shreyas Sachan</h1>
+                    <h2 class="text-xl text-blue-600 font-medium mb-4">M.Sc. in Visual Computing</h2>
                     <p class="text-gray-700 leading-relaxed">
-                        My research interests include 3D Reconstruction, Event-based Vision, Radiance Fields, Computer Vision, Computer Graphics, and Deep Learning for Vision. This website serves as a central hub for my academic work, including my research projects and publications.
+                        I am a Master of Science student at Universität des Saarlandes and a researcher at the Max Planck Institute for Informatics, advised by Prof. Christian Theobalt and Dr. Vladislav Golyanik. My work focuses on 3D Reconstruction, Event-based Vision, and Deep Learning for Vision.
                     </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="mailto:ssachan@mpi-inf.mpg.de" class="text-gray-500 hover:text-blue-600">Email</a>
+                        <a href="https://github.com/shreyas-sachan" target="_blank" class="text-gray-500 hover:text-blue-600">GitHub</a>
+                        <a href="https://scholar.google.com/citations?user=BZtX73UAAAAJ&hl=en" target="_blank" class="text-gray-500 hover:text-blue-600">Google Scholar</a>
+                        <a href="https://linkedin.com/in/shreyassachan" target="_blank" class="text-gray-500 hover:text-blue-600">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex-shrink-0">
+                    <img src="https://raw.githubusercontent.com/shreyas-sachan/shreyas-sachan.github.io/main/ShreyasSachan.png" 
+                         alt="A professional headshot of Shreyas Sachan" 
+                         class="rounded-full shadow-md w-48 h-48 object-cover mx-auto">
                 </div>
             </div>
         </section>
 
         <!-- Research Section -->
-        <section id="research" class="mb-16 scroll-mt-24">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">Research Experience</h2>
-            <div class="space-y-6">
-                <!-- Research Item 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-xl mb-2 text-blue-700">Master's Thesis: 3D Mesh Reconstruction from a Single Event Camera</h3>
-                    <p class="text-gray-700">
-                        At the Max Planck Institute for Informatics, I developed EventNeuS, the first neural framework to extract high-quality 3D meshes solely from monocular event streams. This work introduced SDF-based representations for event data and utilized spherical harmonics to improve reconstruction quality, outperforming the previous state-of-the-art method with a 34% lower Chamfer distance.
-                    </p>
+        <section id="research" class="mb-20 scroll-mt-24">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">Research Experience</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="font-bold text-lg text-blue-700">Master's Thesis: 3D Mesh Reconstruction from a Single Event Camera</h3>
+                    <p class="text-sm text-gray-500 mb-2">Max Planck Institute for Informatics</p>
+                    <p class="text-gray-700 leading-relaxed">Developed EventNeuS, the first neural framework to extract high-quality 3D meshes solely from monocular event streams. This work introduced SDF-based representations for event data and utilized spherical harmonics to improve reconstruction quality, outperforming the previous state-of-the-art method with a 34% lower Chamfer distance.</p>
                 </div>
-                <!-- Research Item 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-xl mb-2 text-blue-700">Research Assistant at DFKI</h3>
-                    <p class="text-gray-700">
-                        As a Research Assistant on the TwinMaP Project at the German Research Center for Artificial Intelligence (DFKI), I trained and deployed Guided Motion Diffusion models for text-to-motion generation. I also developed a custom 3D visualization system and implemented a gRPC-based streaming pipeline for cross-platform integration with CARLA/Unreal Engine.
-                    </p>
+                <div>
+                    <h3 class="font-bold text-lg text-blue-700">Research Assistant, TwinMaP Project</h3>
+                    <p class="text-sm text-gray-500 mb-2">DFKI - German Research Center for Artificial Intelligence</p>
+                    <p class="text-gray-700 leading-relaxed">Trained and deployed Guided Motion Diffusion models for text-to-motion generation. I also developed a custom 3D visualization system and implemented a gRPC-based streaming pipeline for cross-platform integration with CARLA/Unreal Engine.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20 scroll-mt-24">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg">3D Ray Tracer</h3>
+                    <p class="mt-2 text-gray-700">Implemented a 3D ray-tracer in C++ with Monte Carlo path tracing, realistic lighting, shadows, and multi-threading for photorealistic rendering.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg">Neural Style Transfer</h3>
+                    <p class="mt-2 text-gray-700">Implemented Gatys' neural style transfer algorithm using VGG-19 to apply the artistic style of Madhubani paintings to images.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 col-span-full">
+                    <h3 class="font-bold text-lg">Visual Perception for Visually Impaired</h3>
+                    <p class="mt-2 text-gray-700">Developed a 3D perception pipeline using RGBD data that translates spatial information into audio and haptic feedback. Won "Best Algorithm" at e-Yantra Ideas Competition, IIT Bombay.</p>
                 </div>
             </div>
         </section>
 
         <!-- Publications Section -->
-        <section id="publications" class="mb-16 scroll-mt-24">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">Selected Publications</h2>
-            <div class="space-y-4">
-                <!-- Publication Item 1 -->
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-gray-700">
-                        <strong>Sachan, S.</strong> (Under Review). "EventNeuS: 3D Mesh Reconstruction from a Single Event Camera." Submitted to <em>International Conference on 3D Vision (3DV) 2026</em>.
-                    </p>
+        <section id="publications" class="scroll-mt-24">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">Selected Publications</h2>
+            <div class="space-y-6">
+                <div>
+                    <p class="font-medium text-gray-800">EventNeuS: 3D Mesh Reconstruction from a Single Event Camera</p>
+                    <p class="text-sm text-gray-600"><strong>Sachan, S.</strong> (Under Review). Submitted to <em>International Conference on 3D Vision (3DV) 2026</em>.</p>
                 </div>
-                <!-- Publication Item 2 -->
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-gray-700">
-                        Kumar S., Sharma A., Reddy B.K., <strong>Sachan S.</strong>, Jain V. & Singh J. (2021). "An Intelligent Model Based on Integrated Inverse Document Frequency and Multinomial Naive Bayes for Current Affairs News Categorisation." <em>International Journal of System Assurance Engineering and Management</em>.
-                        <a href="https://doi.org/10.1007/s13198-021-01471-7" target="_blank" class="text-blue-600 hover:underline ml-2">[DOI]</a>
-                    </p>
+                <div>
+                    <p class="font-medium text-gray-800">An Intelligent Model Based on Integrated Inverse Document Frequency and Multinomial Naive Bayes for Current Affairs News Categorisation</p>
+                    <p class="text-sm text-gray-600">Kumar S., Sharma A., Reddy B.K., <strong>Sachan S.</strong>, Jain V. & Singh J. (2021). <em>International Journal of System Assurance Engineering and Management</em>.</p>
+                    <a href="https://doi.org/10.1007/s13198-021-01471-7" target="_blank" class="text-sm font-medium text-blue-600 hover:underline">[DOI]</a>
                 </div>
-                 <!-- Add more publications as needed -->
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="text-center scroll-mt-24">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-            <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
-                I am always open to discussing new research ideas, collaborations, or opportunities. Feel free to reach out via email or connect with me online.
-            </p>
-            <div class="flex justify-center space-x-6">
-                <!-- Replace '#' with your actual links -->
-                <a href="mailto:ssachan@mpi-inf.mpg.de" class="text-gray-600 hover:text-blue-600 transition-colors">Email</a>
-                <a href="https://github.com/shreyas-sachan" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">GitHub</a>
-                <a href="https://scholar.google.com/citations?user=BZtX73UAAAAJ&hl=en" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">Google Scholar</a>
-                <a href="https://linkedin.com/in/shreyassachan" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors">LinkedIn</a>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 border-t border-gray-200 mt-12">
-        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+    <footer class="border-t border-gray-200 mt-20">
+        <div class="max-w-4xl mx-auto px-6 py-6 text-center text-gray-500 text-sm">
             <p>&copy; 2025 Shreyas Sachan. All Rights Reserved.</p>
         </div>
     </footer>
 
 </body>
 </html>
-
-
