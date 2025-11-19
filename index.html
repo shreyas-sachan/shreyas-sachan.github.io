@@ -11,11 +11,81 @@
     <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <style>
+        :root {
+            --accent-color: #2563eb;
+            --accent-color-hover: #1d4ed8;
+            --accent-soft: rgba(37, 99, 235, 0.12);
+            --card-radius: 16px;
+            --section-gap: 5rem;
+            --font-base: 'Inter', sans-serif;
+        }
+
+        html {
+            font-family: var(--font-base);
+        }
+
+        .section-block {
+            margin-bottom: var(--section-gap);
+        }
+
+        .card-surface {
+            border-radius: var(--card-radius);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            background: rgba(255, 255, 255, 0.6);
+            transition: transform 200ms ease, border-radius 200ms ease;
+        }
+
+        .card-surface:hover {
+            transform: translateY(-2px);
+        }
+
+        .dark .card-surface {
+            background: rgba(15, 23, 42, 0.6);
+            border-color: rgba(148, 163, 184, 0.2);
+        }
+
+        .accent-text {
+            color: var(--accent-color);
+        }
+
+        .accent-bg {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .accent-chip {
+            background-color: var(--accent-soft);
+            color: var(--accent-color);
+            border-radius: 999px;
+            font-weight: 500;
+            padding: 0.35rem 0.85rem;
+        }
+
+        .playground-option {
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            padding: 0.5rem 0.75rem;
+            transition: all 200ms ease;
+        }
+
+        .playground-option[aria-pressed="true"] {
+            border-color: transparent;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition-duration: 0ms !important;
+            }
+        }
+    </style>
+
     <script>
         // Configure Tailwind to use the 'class' strategy for dark mode
         tailwind.config = {
@@ -39,15 +109,17 @@
                 <!-- Your Name -->
                 <a href="#" class="text-lg font-bold text-gray-900 dark:text-white">Shreyas Sachan</a>
                 <!-- Navigation Links -->
-                <nav class="flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <nav class="flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-400" aria-label="Primary">
                     <div class="hidden md:flex space-x-8">
-                        <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
-                        <a href="#research" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Research</a>
-                        <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
-                        <a href="#publications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Publications</a>
+                        <a href="#about" class="transition-colors hover:text-[var(--accent-color)]">About</a>
+                        <a href="#research" class="transition-colors hover:text-[var(--accent-color)]">Research</a>
+                        <a href="#projects" class="transition-colors hover:text-[var(--accent-color)]">Projects</a>
+                        <a href="#publications" class="transition-colors hover:text-[var(--accent-color)]">Publications</a>
+                        <a href="#education" class="transition-colors hover:text-[var(--accent-color)]">Education</a>
+                        <a href="#contact" class="transition-colors hover:text-[var(--accent-color)]">Contact</a>
                     </div>
                     <!-- Dark Mode Toggle Button -->
-                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 transition-colors hover:text-[var(--accent-color)]">
                         <i class="fas fa-moon fa-lg"></i>
                     </button>
                 </nav>
@@ -59,11 +131,11 @@
     <main class="max-w-4xl mx-auto px-6 py-12">
 
         <!-- About Me Section / Hero -->
-        <section id="about" class="mb-20 scroll-mt-24">
+        <section id="about" class="section-block scroll-mt-24">
             <div class="flex flex-col-reverse md:flex-row items-center gap-12">
                 <div class="md:w-2/3">
                     <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Shreyas Sachan</h1>
-                    <h2 class="text-xl text-blue-600 dark:text-blue-400 font-medium mb-4">M.Sc. in Visual Computing</h2>
+                    <h2 class="text-xl font-medium mb-4 text-[var(--accent-color)]">M.Sc. in Visual Computing</h2>
                     
                     <!-- UPDATED BIO TEXT -->
                     <p class="text-gray-700 dark:text-gray-400 leading-relaxed">
@@ -73,6 +145,17 @@
                         Before this, I was a Research Assistant at MPI-INF under Mohamed Elgharib, focusing on 3D face and hand capture, and a Project Scientist at IIT Delhi under Prof. Srikanta Bedathur and Prof. Maya Ramanath. Previously, I completed my Bachelor's thesis on neural network quantization at IIT Delhi under Prof. Kolin Paul, following my undergraduate studies at the Cluster Innovation Centre, University of Delhi.
                     </p>
 
+                    <div class="flex flex-wrap gap-3 mt-6">
+                        <a href="ShreyasSachan_CV.pdf" target="_blank" class="inline-flex items-center gap-2 rounded-full bg-[var(--accent-color)] text-white text-sm font-medium px-5 py-2 shadow hover:bg-[var(--accent-color-hover)] transition-colors">
+                            <i class="fas fa-file-download"></i>
+                            Download CV
+                        </a>
+                        <a href="#contact" class="inline-flex items-center gap-2 rounded-full border border-[var(--accent-color)] text-[var(--accent-color)] text-sm font-medium px-5 py-2 hover:bg-[var(--accent-soft)] transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                            Let's Talk
+                        </a>
+                    </div>
+
                     <!-- Research Interests -->
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Research Interests</h3>
                     <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 space-y-1">
@@ -81,36 +164,45 @@
                         <li>Deep Learning for 3D Computer Vision</li>
                     </ul>
 
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Technical Focus</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="accent-chip">C++ &amp; CUDA</span>
+                        <span class="accent-chip">PyTorch</span>
+                        <span class="accent-chip">Event Cameras</span>
+                        <span class="accent-chip">Neural Fields</span>
+                        <span class="accent-chip">Multi-view Geometry</span>
+                    </div>
+
                     <!-- NEW HOBBIES SECTION (Minimalist Style, Blue Theme) -->
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Interests & Hobbies</h3>
                     <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6 text-gray-600 dark:text-gray-400">
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
-                            <i class="fas fa-gamepad text-blue-600 dark:text-blue-500"></i>
+                        <div class="flex items-center gap-2 transition-colors hover:text-[var(--accent-color)]">
+                            <i class="fas fa-gamepad text-[var(--accent-color)]"></i>
                             <span>Gaming</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
-                            <i class="fas fa-utensils text-blue-600 dark:text-blue-500"></i>
+                        <div class="flex items-center gap-2 transition-colors hover:text-[var(--accent-color)]">
+                            <i class="fas fa-utensils text-[var(--accent-color)]"></i>
                             <span>Cooking</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
-                            <i class="fas fa-plane text-blue-600 dark:text-blue-500"></i>
+                        <div class="flex items-center gap-2 transition-colors hover:text-[var(--accent-color)]">
+                            <i class="fas fa-plane text-[var(--accent-color)]"></i>
                             <span>Travelling</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
-                            <i class="fas fa-book text-blue-600 dark:text-blue-500"></i>
+                        <div class="flex items-center gap-2 transition-colors hover:text-[var(--accent-color)]">
+                            <i class="fas fa-book text-[var(--accent-color)]"></i>
                             <span>Reading</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
-                            <i class="fas fa-chess-knight text-blue-600 dark:text-blue-500"></i>
+                        <div class="flex items-center gap-2 transition-colors hover:text-[var(--accent-color)]">
+                            <i class="fas fa-chess-knight text-[var(--accent-color)]"></i>
                             <span>Chess</span>
                         </div>
                     </div>
 
                     <div class="flex space-x-4 mt-6">
-                        <a href="mailto:ssachan@mpi-inf.mpg.de" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Email</a>
-                        <a href="https://github.com/shreyas-sachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">GitHub</a>
-                        <a href="https://scholar.google.com/citations?user=BZtX73UAAAAJ&hl=en" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Google Scholar</a>
-                        <a href="https://linkedin.com/in/shreyassachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">LinkedIn</a>
+                        <a href="mailto:ssachan@mpi-inf.mpg.de" class="text-gray-500 dark:text-gray-400 hover:text-[var(--accent-color)]">Email</a>
+                        <a href="https://github.com/shreyas-sachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-[var(--accent-color)]">GitHub</a>
+                        <a href="https://scholar.google.com/citations?user=BZtX73UAAAAJ&hl=en" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-[var(--accent-color)]">Google Scholar</a>
+                        <a href="https://linkedin.com/in/shreyassachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-[var(--accent-color)]">LinkedIn</a>
                     </div>
                 </div>
                 <div class="md:w-1/3 flex-shrink-0">
@@ -122,36 +214,64 @@
         </section>
 
         <!-- Research Section -->
-        <section id="research" class="mb-20 scroll-mt-24">
+        <section id="research" class="section-block scroll-mt-24">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b dark:border-gray-800 pb-2">Research Experience</h2>
-            <div class="space-y-8">
-                <div>
-                    <h3 class="font-bold text-lg text-blue-700 dark:text-blue-400">Master's Thesis: 3D Mesh Reconstruction from a Single Event Camera</h3>
+            <div class="space-y-6">
+                <div class="card-surface p-6 bg-white/70 dark:bg-gray-900/40">
+                    <h3 class="font-bold text-lg text-[var(--accent-color)]">Master's Thesis: 3D Mesh Reconstruction from a Single Event Camera</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Max Planck Institute for Informatics</p>
                     <p class="text-gray-700 dark:text-gray-400 leading-relaxed">Developed EventNeuS, the first neural framework to extract high-quality 3D meshes solely from monocular event streams. This work introduced SDF-based representations for event data and utilized spherical harmonics to improve reconstruction quality, outperforming the previous state-of-the-art method with a 34% lower Chamfer distance.</p>
                 </div>
                 <!-- UPDATED RESEARCH ENTRY: Replaced DFKI with MPI RA -->
-                <div>
-                    <h3 class="font-bold text-lg text-blue-700 dark:text-blue-400">Research Assistant</h3>
+                <div class="card-surface p-6 bg-white/70 dark:bg-gray-900/40">
+                    <h3 class="font-bold text-lg text-[var(--accent-color)]">Research Assistant</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Max Planck Institute for Informatics (MPI-INF)</p>
                     <p class="text-gray-700 dark:text-gray-400 leading-relaxed">Designed and deployed a multi-view camera rig for high-precision 3D face and hand gesture capture. Implemented camera calibration pipelines and developed algorithms for synchronizing and processing multi-view visual data under the supervision of Mohamed Elgharib.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Education Section -->
+        <section id="education" class="section-block scroll-mt-24">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white border-b dark:border-gray-800 pb-2">Education</h2>
+                <span class="text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-500">Lifelong learning</span>
+            </div>
+            <ol class="relative border-l border-gray-200 dark:border-gray-800 space-y-8 pl-6">
+                <li class="relative">
+                    <div class="absolute -left-3 top-1.5 w-4 h-4 rounded-full bg-blue-600/20 border-2 border-blue-500"></div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Universität des Saarlandes</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">M.Sc. Visual Computing · 2022 – Present</p>
+                    <p class="mt-2 text-gray-700 dark:text-gray-400">Deep coursework in 3D vision, differentiable rendering, and optimization with research conducted at the Max Planck Institute for Informatics.</p>
+                </li>
+                <li class="relative">
+                    <div class="absolute -left-3 top-1.5 w-4 h-4 rounded-full bg-blue-600/20 border-2 border-blue-500"></div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Indian Institute of Technology Delhi</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">Project Scientist · 2021 – 2022</p>
+                    <p class="mt-2 text-gray-700 dark:text-gray-400">Worked closely with faculty to operationalize large-scale multi-modal datasets and mentored student teams on applied AI for social impact.</p>
+                </li>
+                <li class="relative">
+                    <div class="absolute -left-3 top-1.5 w-4 h-4 rounded-full bg-blue-600/20 border-2 border-blue-500"></div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">University of Delhi</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">B.Tech. Information Technology &amp; Mathematical Innovations · 2016 – 2020</p>
+                    <p class="mt-2 text-gray-700 dark:text-gray-400">Graduated with distinction from the Cluster Innovation Centre, focusing on computer vision, hardware-aware neural networks, and rapid prototyping.</p>
+                </li>
+            </ol>
+        </section>
+
         <!-- Projects Section -->
-        <section id="projects" class="mb-20 scroll-mt-24">
+        <section id="projects" class="section-block scroll-mt-24">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b dark:border-gray-800 pb-2">Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800">
+                <div class="card-surface p-6 bg-white/70 dark:bg-gray-900/40">
                     <h3 class="font-bold text-lg text-gray-900 dark:text-white">3D Ray Tracer</h3>
                     <p class="mt-2 text-gray-700 dark:text-gray-400">Implemented a 3D ray-tracer in C++ with Monte Carlo path tracing, realistic lighting, shadows, and multi-threading for photorealistic rendering.</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800">
+                <div class="card-surface p-6 bg-white/70 dark:bg-gray-900/40">
                     <h3 class="font-bold text-lg text-gray-900 dark:text-white">Neural Style Transfer</h3>
                     <p class="mt-2 text-gray-700 dark:text-gray-400">Implemented Gatys' neural style transfer algorithm using VGG-19 to apply the artistic style of Madhubani paintings to images.</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800 col-span-full">
+                <div class="card-surface p-6 bg-white/70 dark:bg-gray-900/40 col-span-full">
                     <h3 class="font-bold text-lg text-gray-900 dark:text-white">Visual Perception for Visually Impaired</h3>
                     <p class="mt-2 text-gray-700 dark:text-gray-400">Developed a 3D perception pipeline using RGBD data that translates spatial information into audio and haptic feedback. Won "Best Algorithm" at e-Yantra Ideas Competition, IIT Bombay.</p>
                 </div>
@@ -159,7 +279,7 @@
         </section>
 
         <!-- Publications Section -->
-        <section id="publications" class="scroll-mt-24">
+        <section id="publications" class="section-block scroll-mt-24">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b dark:border-gray-800 pb-2">Selected Publications</h2>
             <div class="space-y-6">
                 <div>
@@ -169,7 +289,88 @@
                 <div>
                     <p class="font-medium text-gray-800 dark:text-gray-200">An Intelligent Model Based on Integrated Inverse Document Frequency and Multinomial Naive Bayes for Current Affairs News Categorisation</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400">Kumar S., Sharma A., Reddy B.K., <strong>Sachan S.</strong>, Jain V. & Singh J. (2021). <em>International Journal of System Assurance Engineering and Management</em>.</p>
-                    <a href="https://doi.org/10.1007/s13198-021-01471-7" target="_blank" class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">[DOI]</a>
+                    <a href="https://doi.org/10.1007/s13198-021-01471-7" target="_blank" class="text-sm font-medium text-[var(--accent-color)] hover:underline">[DOI]</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Style Playground Section -->
+        <section id="style-playground" class="section-block scroll-mt-24">
+            <div class="card-surface p-8 bg-white/80 dark:bg-gray-900/40">
+                <p class="text-sm uppercase tracking-[0.3em] text-[var(--accent-color)] mb-3">Style playground</p>
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Tweak the look in real time</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 max-w-xl">Use these controls to experiment with accent colors, fonts, and card shapes. The script updates CSS variables, so you can copy the values you like straight into the stylesheet.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase">Accent color</p>
+                        <div class="flex flex-wrap gap-3 mt-3" role="group" aria-label="Accent color selector">
+                            <button class="playground-option" data-accent="#2563eb" data-accent-hover="#1d4ed8" data-accent-soft="rgba(37, 99, 235, 0.12)" aria-pressed="true">Ocean blue</button>
+                            <button class="playground-option" data-accent="#7c3aed" data-accent-hover="#6d28d9" data-accent-soft="rgba(124, 58, 237, 0.12)" aria-pressed="false">Violet pulse</button>
+                            <button class="playground-option" data-accent="#059669" data-accent-hover="#047857" data-accent-soft="rgba(5, 150, 105, 0.12)" aria-pressed="false">Emerald bloom</button>
+                            <button class="playground-option" data-accent="#f97316" data-accent-hover="#ea580c" data-accent-soft="rgba(249, 115, 22, 0.14)" aria-pressed="false">Sunset amber</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase">Font personality</p>
+                        <div class="flex gap-3 mt-3" role="group" aria-label="Font selector">
+                            <button class="playground-option" data-font="'Inter', sans-serif" aria-pressed="true">Inter (clean)</button>
+                            <button class="playground-option" data-font="'Space Grotesk', sans-serif" aria-pressed="false">Space Grotesk (expressive)</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase">Card corner radius</p>
+                        <input type="range" id="radius-control" min="8" max="28" value="16" class="w-full accent-[var(--accent-color)] mt-3">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Corner radius: <span id="radius-value">16px</span></p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase">Section spacing</p>
+                        <div class="flex gap-3 mt-3" role="group" aria-label="Section spacing selector">
+                            <button class="playground-option" data-density="roomy" aria-pressed="true">Roomy</button>
+                            <button class="playground-option" data-density="cozy" aria-pressed="false">Cozy</button>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2">Roomy spacing keeps each section distinct; Cozy packs things tighter for single-screen presentations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-block scroll-mt-24">
+            <div class="bg-gradient-to-r from-blue-600/10 via-blue-500/5 to-transparent dark:from-blue-500/10 dark:via-blue-400/5 rounded-2xl border border-gray-200 dark:border-gray-800 p-8">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.3em] text-[var(--accent-color)] mb-2">Let's Collaborate</p>
+                        <h2 class="text-3xl font-semibold text-gray-900 dark:text-white">Have an exciting research problem?</h2>
+                        <p class="mt-3 text-gray-700 dark:text-gray-400">I'm always keen to discuss event-based perception, neural rendering, and creative crossovers between AI and art. The quickest way to reach me is through email, but I'm also available for virtual coffee chats.</p>
+                        <div class="grid sm:grid-cols-3 gap-4 mt-6 text-sm">
+                            <div class="card-surface bg-white/80 dark:bg-gray-950/40 p-4">
+                                <p class="text-gray-500 dark:text-gray-500 uppercase tracking-wide text-xs">Email</p>
+                                <a href="mailto:ssachan@mpi-inf.mpg.de" class="text-gray-900 dark:text-white font-medium hover:text-[var(--accent-color)]">ssachan@mpi-inf.mpg.de</a>
+                            </div>
+                            <div class="card-surface bg-white/80 dark:bg-gray-950/40 p-4">
+                                <p class="text-gray-500 dark:text-gray-500 uppercase tracking-wide text-xs">Location</p>
+                                <p class="text-gray-900 dark:text-white font-medium">Saarbrücken · Germany</p>
+                            </div>
+                            <div class="card-surface bg-white/80 dark:bg-gray-950/40 p-4">
+                                <p class="text-gray-500 dark:text-gray-500 uppercase tracking-wide text-xs">Availability</p>
+                                <p class="text-gray-900 dark:text-white font-medium">Mon – Fri, 10:00–18:00 CET</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 card-surface bg-white/80 dark:bg-gray-950/40 p-6 shadow-sm">
+                        <p class="text-sm text-gray-500 dark:text-gray-500">Topics I'm currently exploring</p>
+                        <ul class="mt-3 space-y-2 text-gray-800 dark:text-gray-300">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-[var(--accent-color)]"></i><span>Neuromorphic sensors for rapid 3D capture</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-[var(--accent-color)]"></i><span>Generative priors for mesh completion</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-[var(--accent-color)]"></i><span>Efficient training loops for limited data regimes</span></li>
+                        </ul>
+                        <a href="mailto:ssachan@mpi-inf.mpg.de" class="mt-6 inline-flex items-center justify-center gap-2 w-full rounded-full bg-blue-600 text-white font-semibold py-3 hover:bg-blue-500 transition-colors">
+                            <i class="fas fa-envelope-open-text"></i>
+                            Send a message
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -188,14 +389,15 @@
         const themeToggle = document.getElementById('theme-toggle');
         const sunIcon = '<i class="fas fa-sun fa-lg"></i>';
         const moonIcon = '<i class="fas fa-moon fa-lg"></i>';
+        const rootElement = document.documentElement;
 
         // Function to apply the theme
         function applyTheme(theme) {
             if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
+                rootElement.classList.add('dark');
                 themeToggle.innerHTML = sunIcon;
             } else {
-                document.documentElement.classList.remove('dark');
+                rootElement.classList.remove('dark');
                 themeToggle.innerHTML = moonIcon;
             }
         }
@@ -212,11 +414,127 @@
 
         // Add click event listener to the toggle button
         themeToggle.addEventListener('click', () => {
-            const isDark = document.documentElement.classList.toggle('dark');
+            const isDark = rootElement.classList.toggle('dark');
             const newTheme = isDark ? 'dark' : 'light';
             localStorage.setItem('color-theme', newTheme);
             themeToggle.innerHTML = isDark ? sunIcon : moonIcon;
         });
+
+        // --- Style Playground Logic ---
+        const stylePrefKey = 'style-playground';
+        const accentButtons = document.querySelectorAll('[data-accent]');
+        const fontButtons = document.querySelectorAll('[data-font]');
+        const densityButtons = document.querySelectorAll('[data-density]');
+        const radiusSlider = document.getElementById('radius-control');
+        const radiusValue = document.getElementById('radius-value');
+
+        const savedStylePrefs = JSON.parse(localStorage.getItem(stylePrefKey) || '{}');
+        const styleState = {
+            accent: savedStylePrefs.accent || { color: '#2563eb', hover: '#1d4ed8', soft: 'rgba(37, 99, 235, 0.12)' },
+            font: savedStylePrefs.font || "'Inter', sans-serif",
+            radius: savedStylePrefs.radius || 16,
+            density: savedStylePrefs.density || 'roomy'
+        };
+
+        function persistStyle() {
+            localStorage.setItem(stylePrefKey, JSON.stringify(styleState));
+        }
+
+        function setActiveButton(group, activeButton) {
+            group.forEach(btn => btn.setAttribute('aria-pressed', btn === activeButton ? 'true' : 'false'));
+        }
+
+        function updateAccent(accent, persist = true) {
+            rootElement.style.setProperty('--accent-color', accent.color);
+            rootElement.style.setProperty('--accent-color-hover', accent.hover);
+            rootElement.style.setProperty('--accent-soft', accent.soft);
+            if (persist) {
+                styleState.accent = accent;
+                persistStyle();
+            }
+        }
+
+        function updateFont(fontValue, persist = true) {
+            rootElement.style.setProperty('--font-base', fontValue);
+            if (persist) {
+                styleState.font = fontValue;
+                persistStyle();
+            }
+        }
+
+        function updateRadius(radiusValuePx, persist = true) {
+            rootElement.style.setProperty('--card-radius', `${radiusValuePx}px`);
+            if (radiusValue) {
+                radiusValue.textContent = `${radiusValuePx}px`;
+            }
+            if (radiusSlider && radiusSlider.value !== String(radiusValuePx)) {
+                radiusSlider.value = radiusValuePx;
+            }
+            if (persist) {
+                styleState.radius = radiusValuePx;
+                persistStyle();
+            }
+        }
+
+        function updateDensity(mode, persist = true) {
+            const gapValue = mode === 'cozy' ? '3rem' : '5rem';
+            rootElement.style.setProperty('--section-gap', gapValue);
+            if (persist) {
+                styleState.density = mode;
+                persistStyle();
+            }
+        }
+
+        accentButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const accent = {
+                    color: button.dataset.accent,
+                    hover: button.dataset.accentHover,
+                    soft: button.dataset.accentSoft
+                };
+                updateAccent(accent);
+                setActiveButton(accentButtons, button);
+            });
+
+            if (styleState.accent.color === button.dataset.accent) {
+                setActiveButton(accentButtons, button);
+            }
+        });
+
+        fontButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateFont(button.dataset.font);
+                setActiveButton(fontButtons, button);
+            });
+
+            if (styleState.font === button.dataset.font) {
+                setActiveButton(fontButtons, button);
+            }
+        });
+
+        densityButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateDensity(button.dataset.density);
+                setActiveButton(densityButtons, button);
+            });
+
+            if (styleState.density === button.dataset.density) {
+                setActiveButton(densityButtons, button);
+            }
+        });
+
+        if (radiusSlider) {
+            radiusSlider.addEventListener('input', (event) => {
+                const radius = Number(event.target.value);
+                updateRadius(radius);
+            });
+        }
+
+        // Apply saved preferences on load
+        updateAccent(styleState.accent, false);
+        updateFont(styleState.font, false);
+        updateRadius(styleState.radius, false);
+        updateDensity(styleState.density, false);
     </script>
 
 </body>
