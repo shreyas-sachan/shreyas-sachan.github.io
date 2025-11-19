@@ -60,7 +60,8 @@
 
         <!-- About Me Section / Hero -->
         <section id="about" class="mb-20 scroll-mt-24">
-            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+            <!-- MODIFICATION: Changed items-center to items-start to align picture to top -->
+            <div class="flex flex-col-reverse md:flex-row items-start gap-12">
                 <div class="md:w-2/3">
                     <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Shreyas Sachan</h1>
                     <h2 class="text-xl text-blue-600 dark:text-blue-400 font-medium mb-4">M.Sc. in Visual Computing</h2>
@@ -82,25 +83,26 @@
                     </ul>
 
                     <!-- NEW HOBBIES SECTION (Minimalist Style, Blue Theme) -->
+                    <!-- MODIFICATION: Added md:flex-nowrap to force single row on desktop -->
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Interests & Hobbies</h3>
-                    <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6 text-gray-600 dark:text-gray-400">
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
+                    <div class="flex flex-wrap md:flex-nowrap items-center gap-x-6 gap-y-3 mb-6 text-gray-600 dark:text-gray-400">
+                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
                             <i class="fas fa-gamepad text-blue-600 dark:text-blue-500"></i>
                             <span>Gaming</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
+                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
                             <i class="fas fa-utensils text-blue-600 dark:text-blue-500"></i>
                             <span>Cooking</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
+                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
                             <i class="fas fa-plane text-blue-600 dark:text-blue-500"></i>
                             <span>Travelling</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
+                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
                             <i class="fas fa-book text-blue-600 dark:text-blue-500"></i>
                             <span>Reading</span>
                         </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400">
+                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
                             <i class="fas fa-chess-knight text-blue-600 dark:text-blue-500"></i>
                             <span>Chess</span>
                         </div>
