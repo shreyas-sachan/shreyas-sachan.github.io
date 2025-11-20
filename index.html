@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shreyas Sachan | Academic Portfolio</title>
     
-    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts (Inter) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script>
         // Configure Tailwind to use the 'class' strategy for dark mode
@@ -29,18 +32,22 @@
 </head>
 <body class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-300 antialiased transition-colors duration-300">
 
-    <!-- Header & Navigation --><header class="bg-white/90 dark:bg-gray-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 dark:bg-gray-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-4xl mx-auto px-6">
             <div class="flex justify-between items-center h-16">
-                <!-- Your Name --><a href="#" class="text-lg font-bold text-gray-900 dark:text-white">Shreyas Sachan</a>
-                <!-- Navigation Links --><nav class="flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <!-- Your Name -->
+                <a href="#" class="text-lg font-bold text-gray-900 dark:text-white">Shreyas Sachan</a>
+                <!-- Navigation Links -->
+                <nav class="flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-400">
                     <div class="hidden md:flex space-x-8">
                         <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
                         <a href="#research" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Research</a>
                         <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
                         <a href="#publications" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Publications</a>
                     </div>
-                    <!-- Dark Mode Toggle Button --><button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                         <i class="fas fa-moon fa-lg"></i>
                     </button>
                 </nav>
@@ -48,68 +55,81 @@
         </div>
     </header>
 
-    <!-- Main Content --><main class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
 
-        <!-- About Me Section / Hero --><section id="about" class="mb-20 scroll-mt-24">
-            <div class="flex flex-col-reverse md:flex-row items-start gap-12">
+        <!-- About Me Section / Hero -->
+        <section id="about" class="mb-20 scroll-mt-24">
+            <!-- TOP ROW: Intro Text (Left) + Image (Right) -->
+            <div class="flex flex-col-reverse md:flex-row items-start gap-6">
                 <div class="md:w-2/3">
                     <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">Shreyas Sachan</h1>
                     <h2 class="text-xl text-blue-600 dark:text-blue-400 font-medium mb-4">M.Sc. in Visual Computing</h2>
                     
-                    <!-- UPDATED BIO TEXT --><p class="text-gray-700 dark:text-gray-400 leading-relaxed">
-                        I am a Master of Science student in Visual Computing at Universität des Saarlandes, currently writing my master's thesis on "3D Mesh Reconstruction from a Single Event Camera." I have the privilege of conducting this research within the 4D and Quantum Computer Vision Group at the Visual Computing and Artificial Intelligence Department of Max Planck Institute for Informatics, under the guidance of Prof. Christian Theobalt and Dr Vladislav Golyanik. 
+                    <!-- MODIFICATION: Added Links -->
+                    <p class="text-gray-700 dark:text-gray-400 leading-relaxed text-justify">
+                        I am a Master of Science student in Visual Computing at Universität des Saarlandes, currently writing my master's thesis on "3D Mesh Reconstruction from a Single Event Camera." I have the privilege of conducting this research within the <a href="https://4dqv.mpi-inf.mpg.de/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">4D and Quantum Computer Vision Group</a> at the <a href="https://www.mpi-inf.mpg.de/departments/visual-computing-and-artificial-intelligence" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Visual Computing and Artificial Intelligence Department</a> of Max Planck Institute for Informatics, under the expert guidance of <a href="https://people.mpi-inf.mpg.de/~theobalt/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Prof. Christian Theobalt</a> and <a href="https://people.mpi-inf.mpg.de/~golyanik/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Dr. Vladislav Golyanik</a>. 
                     </p>
-                    <p class="text-gray-700 dark:text-gray-400 leading-relaxed mt-4">
-                        Before this, I was a Research Assistant at MPI-INF under Mohamed Elgharib, focusing on 3D face and hand capture, and a Project Scientist at IIT Delhi under Prof. Srikanta Bedathur and Prof. Maya Ramanath. Previously, I completed my Bachelor's thesis on neural network quantization at IIT Delhi under Prof. Kolin Paul, following my undergraduate studies at the Cluster Innovation Centre, University of Delhi.
-                    </p>
+                </div>
+                <div class="md:w-1/3 flex-shrink-0 w-full">
+                    <img src="https://raw.githubusercontent.com/shreyas-sachan/shreyas-sachan.github.io/main/ShreyasSachan.png" 
+                         alt="A professional headshot of Shreyas Sachan" 
+                         class="rounded-full shadow-md w-48 h-48 object-cover mx-auto mt-8 md:ml-auto md:mr-8">
+                </div>
+            </div>
 
-                    <!-- Research Interests --><h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Research Interests</h3>
-                    <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 space-y-1">
-                        <li>3D Reconstruction & Neural Rendering</li>
-                        <li>Event-based (Neuromorphic) Vision</li>
-                        <li>Deep Learning for 3D Computer Vision</li>
-                    </ul>
+            <!-- BOTTOM ROW: Extended Content (Full Width) -->
+            <div class="mt-4">
+                <!-- MODIFICATION: Added Links -->
+                <p class="text-gray-700 dark:text-gray-400 leading-relaxed text-justify">
+                    Previously, I was a Research Assistant at MPI-INF under <a href="https://people.mpi-inf.mpg.de/~elgharib/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Mohamed Elgharib</a>, focusing on 3D face and hand capture, and a Project Scientist at IIT Delhi under <a href="https://www.cse.iitd.ac.in/~srikanta/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Prof. Srikanta Bedathur</a>. Prior to that, I completed my Bachelor's thesis on neural network quantization at IIT Delhi under <a href="https://www.cse.iitd.ac.in/~kolin/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Prof. Kolin Paul</a>, following my undergraduate studies at the Cluster Innovation Centre, University of Delhi.
+                </p>
 
-                    <!-- NEW HOBBIES SECTION (Minimalist Style, Blue Theme) --><h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Interests & Hobbies</h3>
-                    <div class="flex flex-wrap md:flex-nowrap items-center gap-x-6 gap-y-3 mb-6 text-gray-600 dark:text-gray-400">
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
-                            <i class="fas fa-gamepad text-blue-600 dark:text-blue-500"></i>
-                            <span>Gaming</span>
-                        </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
-                            <i class="fas fa-utensils text-blue-600 dark:text-blue-500"></i>
-                            <span>Cooking</span>
-                        </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
-                            <i class="fas fa-plane text-blue-600 dark:text-blue-500"></i>
-                            <span>Travelling</span>
-                        </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
-                            <i class="fas fa-book text-blue-600 dark:text-blue-500"></i>
-                            <span>Reading</span>
-                        </div>
-                        <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
-                            <i class="fas fa-chess-knight text-blue-600 dark:text-blue-500"></i>
-                            <span>Chess</span>
-                        </div>
+                <!-- Research Interests -->
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Research Interests</h3>
+                <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 space-y-1">
+                    <li>3D Reconstruction & Neural Rendering</li>
+                    <li>Event-based (Neuromorphic) Vision</li>
+                    <li>Deep Learning for 3D Computer Vision</li>
+                </ul>
+
+                <!-- Interests & Hobbies -->
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">Interests & Hobbies</h3>
+                <div class="flex flex-wrap md:flex-nowrap items-center gap-x-6 gap-y-3 mb-6 text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
+                        <i class="fas fa-gamepad text-blue-600 dark:text-blue-500"></i>
+                        <span>Gaming</span>
                     </div>
-
-                    <div class="flex space-x-4 mt-6">
-                        <a href="mailto:ssachan@mpi-inf.mpg.de" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Email</a>
-                        <a href="https://github.com/shreyas-sachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">GitHub</a>
-                        <a href="https://scholar.google.com/citations?user=BZtX73UAAAAJ&hl=en" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Google Scholar</a>
-                        <a href="https://linkedin.com/in/shreyassachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">LinkedIn</a>
+                    <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
+                        <i class="fas fa-utensils text-blue-600 dark:text-blue-500"></i>
+                        <span>Cooking</span>
+                    </div>
+                    <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
+                        <i class="fas fa-plane text-blue-600 dark:text-blue-500"></i>
+                        <span>Travelling</span>
+                    </div>
+                    <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
+                        <i class="fas fa-book text-blue-600 dark:text-blue-500"></i>
+                        <span>Reading</span>
+                    </div>
+                    <div class="flex items-center gap-2 transition-colors hover:text-blue-600 dark:hover:text-blue-400 whitespace-nowrap">
+                        <i class="fas fa-chess-knight text-blue-600 dark:text-blue-500"></i>
+                        <span>Chess</span>
                     </div>
                 </div>
-                <div class="md:w-1/3 flex-shrink-0">
-                    <!-- MODIFICATION: Added mt-8 to move the image down --><img src="https://raw.githubusercontent.com/shreyas-sachan/shreyas-sachan.github.io/main/ShreyasSachan.png" 
-                         alt="A professional headshot of Shreyas Sachan" 
-                         class="rounded-full shadow-md w-48 h-48 object-cover mx-auto mt-8">
+
+                <!-- Links -->
+                <div class="flex space-x-4 mt-6">
+                    <a href="mailto:ssachan@mpi-inf.mpg.de" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Email</a>
+                    <a href="https://github.com/shreyas-sachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">GitHub</a>
+                    <a href="https://scholar.google.com/citations?user=BZtX73UAAAAJ&hl=en" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Google Scholar</a>
+                    <a href="https://linkedin.com/in/shreyassachan" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">LinkedIn</a>
                 </div>
             </div>
         </section>
 
-        <!-- Research Section --><section id="research" class="mb-20 scroll-mt-24">
+        <!-- Research Section -->
+        <section id="research" class="mb-20 scroll-mt-24">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b dark:border-gray-800 pb-2">Research Experience</h2>
             <div class="space-y-8">
                 <div>
@@ -117,15 +137,17 @@
                     <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Max Planck Institute for Informatics</p>
                     <p class="text-gray-700 dark:text-gray-400 leading-relaxed">Developed EventNeuS, the first neural framework to extract high-quality 3D meshes solely from monocular event streams. This work introduced SDF-based representations for event data and utilized spherical harmonics to improve reconstruction quality, outperforming the previous state-of-the-art method with a 34% lower Chamfer distance.</p>
                 </div>
-                <!-- UPDATED RESEARCH ENTRY: Replaced DFKI with MPI RA --><div>
+                <div>
                     <h3 class="font-bold text-lg text-blue-700 dark:text-blue-400">Research Assistant</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Max Planck Institute for Informatics (MPI-INF)</p>
-                    <p class="text-gray-700 dark:text-gray-400 leading-relaxed">Designed and deployed a multi-view camera rig for high-precision 3D face and hand gesture capture. Implemented camera calibration pipelines and developed algorithms for synchronizing and processing multi-view visual data under the supervision of Mohamed Elgharib.</p>
+                    <!-- MODIFICATION: Added Link -->
+                    <p class="text-gray-700 dark:text-gray-400 leading-relaxed">Designed and deployed a multi-view camera rig for high-precision 3D face and hand gesture capture. Implemented camera calibration pipelines and developed algorithms for synchronizing and processing multi-view visual data.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section --><section id="projects" class="mb-20 scroll-mt-24">
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20 scroll-mt-24">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b dark:border-gray-800 pb-2">Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border border-gray-200 dark:border-gray-800">
@@ -143,12 +165,13 @@
             </div>
         </section>
 
-        <!-- Publications Section --><section id="publications" class="scroll-mt-24">
+        <!-- Publications Section -->
+        <section id="publications" class="scroll-mt-24">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b dark:border-gray-800 pb-2">Selected Publications</h2>
             <div class="space-y-6">
                 <div>
                     <p class="font-medium text-gray-800 dark:text-gray-200">EventNeuS: 3D Mesh Reconstruction from a Single Event Camera</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400"><strong>Sachan, S.</strong> (Under Review). Submitted to <em>International Conference on 3D Vision (3DV) 2026</em>.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400"><strong>Shreyas Sachan</strong>, Viktor Rudnev, Mohamed Elgharib, Christian Theobalt, and Vladislav Golyanik. In <em>International Conference on 3D Vision (3DV)</em>, 2026.</p>
                 </div>
                 <div>
                     <p class="font-medium text-gray-800 dark:text-gray-200">An Intelligent Model Based on Integrated Inverse Document Frequency and Multinomial Naive Bayes for Current Affairs News Categorisation</p>
@@ -160,7 +183,8 @@
 
     </main>
 
-    <!-- Footer --><footer class="border-t border-gray-200 dark:border-gray-800 mt-20">
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 dark:border-gray-800 mt-20">
         <div class="max-w-4xl mx-auto px-6 py-6 text-center text-gray-500 dark:text-gray-500 text-sm">
             <p>&copy; 2025 Shreyas Sachan. All Rights Reserved.</p>
         </div>
@@ -204,5 +228,3 @@
 
 </body>
 </html>
-
-
